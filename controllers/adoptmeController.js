@@ -7,13 +7,14 @@ var router = express.Router();
 var adoptme = require("../models/adoptme.js");
 
 // Create all our routes and set up logic within those routes where required.
+
 router.get("/", function(req, res){
   adoptme.selectAll(function(data) {
       var hdbrsObj = {
           animal: data
       };
       console.log(hdbrsObj);
-      res.render("index", hdbrsObj)
+      res.render("index", hdbrsObj);
   });
   
 router.get("/favorites", function(req, res){
