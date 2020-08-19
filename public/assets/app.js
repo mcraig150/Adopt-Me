@@ -1,6 +1,5 @@
 
 
-//user secret to be moved to .env file
 const key = "cxyhnll5ScFfHdAHD2pKJ0hAOREZIlaSFRx6MnajQy35qxKJVn";
 const secret = "O4kyEkoJkbFd5OfhhPaYja1c8GHtSPyI9W1eCyBc";
 
@@ -83,13 +82,13 @@ function renderCard(info) {
      image = info.animals[i].photos[0].full;
     }
     else {
-        image = "#"
+        image = "https://via.placeholder.com/250?text=Image+Coming+Soon"
     }
 
     $("#cards").append(
       `
             <div>
-                <div class="col s6 m6">
+                <div class="col s3 m6">
                     <div class="card">
                         <div class="card-image">
                             <img id="img${i}" src="${image}" alt="pet">

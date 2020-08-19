@@ -24,10 +24,6 @@ app.get('/img2', (req, res) => {
   res.sendFile(path.join(__dirname, '/public/assets/images/adopt_me.png'))
 });
 
-router.get("/js", (req, res) => {
-  res.sendFile(path.join(__dirname,"/public/assets/js/app.js"));    
-});
-
 
 // Import routes and give the server access to them.
 var routes = require("./controllers/adoptmeController.js");

@@ -1,7 +1,22 @@
 nav {
-    background-color: black;
+    background-color:black;
 }
 
 h2 {
     font-size: 2.56rem;
+}
+
+#mainImage {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+}
+
+#logo {
+    font-size: 1.5rem;
+    padding-left: 20px;
+}
+
+#img1 {
+    border-radius: 10px;
 }
