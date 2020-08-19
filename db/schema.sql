@@ -13,3 +13,4 @@ CREATE TABLE animal (
     url VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 );
+
