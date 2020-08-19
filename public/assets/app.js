@@ -1,4 +1,4 @@
-const e = require("express");
+
 
 //user secret to be moved to .env file
 const key = "cxyhnll5ScFfHdAHD2pKJ0hAOREZIlaSFRx6MnajQy35qxKJVn";
@@ -96,7 +96,7 @@ function renderCard(info) {
                         </div>
                         <div class="card-content">
                             <p id="dist${i}">${info.animals[i].name}      ${info.animals[i].distance} Miles away</p>
-                            <a id= "fav${i}" class="btn-floating right waves-effect waves-light red"><i class="material-icons">add</i></a>
+                            <a id= "fav${i}" class="btn-floating right waves-effect waves-light red"><i class="material-icons" id ="btn${i}">add</i></a>
                         </div>
                         <div class="card-action">
                              <a id= "url${i}" href="${info.animals[i].url}">More info</a>
@@ -117,17 +117,30 @@ function saveData(count) {
   //loops through each button and adds an event listener to it   
   for (let i = 0; i < count; i++) {
     $("#fav" + i).click(() => {
-      $("#cards").append(" <h1> test </h1>");
+      //changes plus button to check
+      $("#btn"+i).text('check');
+      console.log($("#btn"+i).text()); 
       //creates an object array with the cards info and logs it to the console on click  
-      let fav = [
+      let fav =
         {
-          distance: $("#dist" + i).text(),
           image: $("#img" + i).attr("src"),
+          name: $("#dist" + i).text(),
           url: $("#url" + i).attr("href"),
-        },
-      ];
+        };
 
-      console.log(fav);
+        $.ajax("/api/animal", {
+          type: "POST",
+          data: JSON.stringify(fav),
+          contentType: "application/json; charset=utf-8",
+          dataType: "json",
+
+      }).then(function(){
+          console.log("New pet added");
+          
+      });;
+
+
+
     });
   }
 }

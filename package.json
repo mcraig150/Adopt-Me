@@ -4,7 +4,7 @@
   "description": "* KekeliVA",
   "main": "express.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node express.js"
   },
   "author": "",
   "license": "ISC",
